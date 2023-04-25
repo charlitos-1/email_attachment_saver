@@ -89,7 +89,8 @@ def main():
                 
             # save attachment
             attachment_output_filepath = os.path.join(attachment_output_folder, new_attachment_filename)                    
-            attachment.SaveAsFile(attachment_output_filepath)
+            if not os.path.exists(attachment_output_filepath):
+                attachment.SaveAsFile(attachment_output_filepath)
             
 if __name__ == "__main__":
     main()
